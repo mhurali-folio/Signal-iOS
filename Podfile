@@ -128,9 +128,9 @@ post_install do |installer|
   disable_bitcode(installer)
   disable_armv7(installer)
   strip_valid_archs(installer)
-  update_frameworks_script(installer)
+  # update_frameworks_script(installer)
   disable_non_development_pod_warnings(installer)
-  copy_acknowledgements
+  # copy_acknowledgements
 end
 
 # Works around CocoaPods behavior designed for static libraries.

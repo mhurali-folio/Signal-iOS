@@ -96,7 +96,7 @@ public class DonationUtilities: NSObject {
             amount: amount,
             type: .final
         )]
-        request.merchantIdentifier = "merchant.org.signalfoundation"
+        request.merchantIdentifier = "merchant.org.peepline"
         request.merchantCapabilities = .capability3DS
         request.countryCode = "US"
         request.currencyCode = currencyCode
