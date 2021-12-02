@@ -1111,7 +1111,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		453518771FC635DD00210559 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -1119,7 +1119,7 @@
 				453518721FC635DD00210559 /* SignalShareExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		4535189F1FC63DBF00210559 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -1172,6 +1172,7 @@
 		32ECD08724BFBF8000EDDED0 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		32ECD08924BFBF9500EDDED0 /* ContactSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportViewController.swift; sourceTree = "<group>"; };
 		32FAB9292727A57100FB76A6 /* PrimaryImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryImageView.swift; sourceTree = "<group>"; };
+		338C08EE2758DD010079258D /* SignalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignalDebug.entitlements; sourceTree = "<group>"; };
 		3402A9D9271D953A0084CBAE /* SUIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIEnvironment.swift; sourceTree = "<group>"; };
 		3402A9DB271D95C10084CBAE /* Dependencies+SignalUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependencies+SignalUI.swift"; sourceTree = "<group>"; };
 		3402A9E0271D96570084CBAE /* UIView+OWS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+OWS.swift"; sourceTree = "<group>"; };
@@ -4469,6 +4470,7 @@
 		D221A093169C9E5E00537ABF /* Signal */ = {
 			isa = PBXGroup;
 			children = (
+				338C08EE2758DD010079258D /* SignalDebug.entitlements */,
 				88BFD4712335C2A4001797D7 /* Lottie */,
 				34330A581E7875FB00DF2FB9 /* Fonts */,
 				B66DBF4919D5BBC8006EA940 /* Images.xcassets */,
@@ -4782,7 +4784,6 @@
 					};
 					453518671FC635DD00210559 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = U68MSDN6DR;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -4806,7 +4807,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					D221A088169C9E5E00537ABF = {
-						DevelopmentTeam = U68MSDN6DR;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -6693,7 +6693,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalNSE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -6765,7 +6765,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalNSE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -6839,7 +6839,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalNSE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6913,7 +6913,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalNSE;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -7525,7 +7525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = U68MSDN6DR;
+				DEVELOPMENT_TEAM = 25V745Q5JW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7542,7 +7542,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.shareextension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.shareextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7611,7 +7611,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.shareextension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.shareextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -7671,7 +7671,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalMessaging;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.SignalMessaging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -7750,7 +7750,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalMessaging;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.SignalMessaging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -7872,7 +7872,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 25V745Q5JW;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7909,7 +7909,7 @@
 				);
 				LLVM_LTO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -8047,7 +8047,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.shareextension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.shareextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -8126,7 +8126,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalMessaging;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.SignalMessaging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -8437,7 +8437,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U68MSDN6DR;
+				DEVELOPMENT_TEAM = 25V745Q5JW;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -8475,7 +8475,7 @@
 				);
 				LLVM_LTO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -8611,7 +8611,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.shareextension;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.shareextension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -8690,7 +8690,7 @@
 					"@loader_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal.SignalMessaging;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal.SignalMessaging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -8950,13 +8950,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
 				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
-				CODE_SIGN_ENTITLEMENTS = Signal/Signal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Signal/SignalDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 25V745Q5JW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -8994,7 +8994,7 @@
 				LLVM_LTO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -9062,7 +9062,7 @@
 				);
 				LLVM_LTO = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = org.whispersystems.signal;
+				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
