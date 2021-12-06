@@ -322,7 +322,11 @@ NSString *const kNSUserDefaults_DidTerminateKey = @"kNSUserDefaults_DidTerminate
         [self showOnboardingView:onboarding];
     }
 
-    [AppUpdateNag.shared showAppUpgradeNagIfNecessary];
+    /**
+            Commenting out the below line since our app with identifier org.peepline.signal is not on the appstore,
+            so it will cause error.
+     */
+//    [AppUpdateNag.shared showAppUpgradeNagIfNecessary];
 
     [UIViewController attemptRotationToDeviceOrientation];
 }
