@@ -4,8 +4,16 @@
 <dict>
 	<key>BuildDetails</key>
 	<dict>
+		<key>DateTime</key>
+		<string>Thu Dec  9 08:54:02 UTC 2021</string>
+		<key>SignalCommit</key>
+		<string>300e14671b35865f5a96b73162f58c5ddf8bbd93 Commented upgrade dialog, was causing crash</string>
+		<key>Timestamp</key>
+		<string>1639040042</string>
 		<key>WebRTCCommit</key>
 		<string>1ab326495ab7915dbd74fc3049c45a05fa038b37 Production build of v2.15.0</string>
+		<key>XCodeVersion</key>
+		<string>1300.1310</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -165,7 +173,6 @@
 		<string>audio</string>
 		<string>fetch</string>
 		<string>remote-notification</string>
-		<string>voip</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
