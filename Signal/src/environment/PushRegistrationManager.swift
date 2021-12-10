@@ -57,11 +57,19 @@ public enum PushRegistrationError: Error {
                 throw PushRegistrationError.pushNotSupported(description: "Push not supported on simulators")
             }
 
-            return self.registerForVanillaPushToken().then { vanillaPushToken -> Promise<(pushToken: String, voipToken: String?)> in
-                self.registerForVoipPushToken().map { voipPushToken in
-                    (pushToken: vanillaPushToken, voipToken: voipPushToken)
-                }
+            return self.registerForVanillaPushToken().map { vanillaPushToken in
+                (pushToken: vanillaPushToken, voipToken: nil)
             }
+            
+            /**
+                            Commenting below code because we are never getting a voip and it just stucks here
+             */
+            
+//            return self.registerForVanillaPushToken().then { vanillaPushToken -> Promise<(pushToken: String, voipToken: String?)> in
+//                self.registerForVoipPushToken().map { voipPushToken in
+//                    (pushToken: vanillaPushToken, voipToken: voipPushToken)
+//                }
+//            }
         }
     }
 
@@ -117,6 +125,7 @@ public enum PushRegistrationError: Error {
     // MARK: PKPushRegistryDelegate - voIP Push Token
 
     public func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
+        print("Here 12 received")
         assertOnQueue(calloutQueue)
         owsAssertDebug(CurrentAppContext().isMainApp)
         owsAssertDebug(type == .voIP)
@@ -376,21 +385,24 @@ public enum PushRegistrationError: Error {
 
     private func createVoipRegistryIfNecessary() {
         AssertIsOnMainThread()
-
+        print("Here 9 ",voipRegistry)
         guard voipRegistry == nil else { return }
         let voipRegistry = PKPushRegistry(queue: calloutQueue)
+        print("Here 10 ")
         self.voipRegistry  = voipRegistry
         voipRegistry.desiredPushTypes = [.voIP]
         voipRegistry.delegate = self
+        print("Here 11 ")
     }
 
     private func registerForVoipPushToken() -> Promise<String?> {
         AssertIsOnMainThread()
         Logger.info("")
-
+print("Here 1")
         // We never populate voip tokens with the service when
         // using the notification service extension.
         guard !FeatureFlags.notificationServiceExtension else {
+            print("Here 2")
             Logger.info("Not using VOIP token because NSE is enabled.")
             // We still must create the voip registry to handle voip
             // pushes relayed from the NSE.
@@ -399,6 +411,7 @@ public enum PushRegistrationError: Error {
         }
 
         guard self.voipTokenPromise == nil else {
+            print("Here 3")
             let promise = self.voipTokenPromise!
             owsAssertDebug(!promise.isSealed)
             return promise.map { $0?.hexEncodedString }
@@ -414,6 +427,7 @@ public enum PushRegistrationError: Error {
         createVoipRegistryIfNecessary()
 
         guard let voipRegistry = self.voipRegistry else {
+            print("Here 4")
             owsFailDebug("failed to initialize voipRegistry")
             future.reject(PushRegistrationError.assertionError(description: "failed to initialize voipRegistry"))
             return promise.map { _ in
@@ -426,14 +440,17 @@ public enum PushRegistrationError: Error {
         // If we've already completed registering for a voip token, resolve it immediately,
         // rather than waiting for the delegate method to be called.
         if let voipTokenData = voipRegistry.pushToken(for: .voIP) {
+            print("Here 5")
             Logger.info("using pre-registered voIP token")
             future.resolve(voipTokenData)
         }
 
         return promise.map { (voipTokenData: Data?) -> String? in
+            print("Here 6")
             Logger.info("successfully registered for voip push notifications")
             return voipTokenData?.hexEncodedString
         }.ensure {
+            print("Here 7")
             self.voipTokenPromise = nil
         }
     }

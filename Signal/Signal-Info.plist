@@ -5,11 +5,11 @@
 	<key>BuildDetails</key>
 	<dict>
 		<key>DateTime</key>
-		<string>Thu Dec  9 08:54:02 UTC 2021</string>
+		<string>Fri Dec 10 07:52:55 UTC 2021</string>
 		<key>SignalCommit</key>
-		<string>300e14671b35865f5a96b73162f58c5ddf8bbd93 Commented upgrade dialog, was causing crash</string>
+		<string>6a94539e0869520a916631a528a6954ba51eecd7 Merge branch signalapp:master into signal-setup</string>
 		<key>Timestamp</key>
-		<string>1639040042</string>
+		<string>1639122775</string>
 		<key>WebRTCCommit</key>
 		<string>1ab326495ab7915dbd74fc3049c45a05fa038b37 Production build of v2.15.0</string>
 		<key>XCodeVersion</key>
@@ -18,7 +18,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Peepline</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
@@ -34,7 +34,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5.26.5</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
