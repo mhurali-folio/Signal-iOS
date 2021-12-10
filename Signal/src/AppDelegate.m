@@ -134,6 +134,7 @@ void uncaughtExceptionHandler(NSException *exception)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    
 #if TESTABLE_BUILD
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 #endif
@@ -238,6 +239,8 @@ void uncaughtExceptionHandler(NSException *exception)
     UIWindow *mainWindow = [OWSWindow new];
     self.window = mainWindow;
     CurrentAppContext().mainWindow = mainWindow;
+    
+    
     // Show LoadingViewController until the async database view registrations are complete.
     mainWindow.rootViewController = [LoadingViewController new];
     [mainWindow makeKeyAndVisible];

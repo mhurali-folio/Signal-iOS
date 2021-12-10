@@ -19,12 +19,28 @@ public class LoadingViewController: UIViewController {
     override public func loadView() {
         self.view = UIView()
         view.backgroundColor = Theme.launchScreenBackground
+        
+        let imageView: UIImageView = {
+                let imageView = UIImageView(frame: .zero)
+                imageView.image = UIImage(named: "ultramarine-launch-screen")
+                imageView.contentMode = .scaleToFill
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+                return imageView
+            }()
+        
+        view.insertSubview(imageView, at: 0)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
 
-        self.logoView = UIImageView(image: #imageLiteral(resourceName: "signal-logo-128-launch-screen"))
-        view.addSubview(logoView)
+//        self.logoView = UIImageView(image: #imageLiteral(resourceName: "signal-logo-128-launch-screen"))
+//        view.addSubview(logoView)
 
-        logoView.autoCenterInSuperview()
-        logoView.autoSetDimensions(to: CGSize(square: 128))
+//        logoView.autoCenterInSuperview()
+//        logoView.autoSetDimensions(to: CGSize(square: 128))
 
         self.topLabel = buildLabel()
         topLabel.alpha = 0
@@ -43,7 +59,7 @@ public class LoadingViewController: UIViewController {
         labelStack.spacing = 8
         view.addSubview(labelStack)
 
-        labelStack.autoPinEdge(.top, to: .bottom, of: logoView, withOffset: 20)
+//        labelStack.autoPinEdge(.top, to: .bottom, of: logoView, withOffset: 20)
         labelStack.autoPinLeadingToSuperviewMargin()
         labelStack.autoPinTrailingToSuperviewMargin()
         labelStack.setCompressionResistanceHigh()

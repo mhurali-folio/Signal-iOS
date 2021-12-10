@@ -4,16 +4,8 @@
 <dict>
 	<key>BuildDetails</key>
 	<dict>
-		<key>DateTime</key>
-		<string>Fri Dec 10 07:52:55 UTC 2021</string>
-		<key>SignalCommit</key>
-		<string>6a94539e0869520a916631a528a6954ba51eecd7 Merge branch signalapp:master into signal-setup</string>
-		<key>Timestamp</key>
-		<string>1639122775</string>
 		<key>WebRTCCommit</key>
 		<string>1ab326495ab7915dbd74fc3049c45a05fa038b37 Production build of v2.15.0</string>
-		<key>XCodeVersion</key>
-		<string>1300.1310</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
