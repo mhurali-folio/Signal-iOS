@@ -230,7 +230,8 @@ public class OnboardingController: NSObject {
             if SSKPreferences.didDropYdb() {
                 return OnboardingDroppedYdbViewController(onboardingController: self)
             } else {
-                return OnboardingSplashViewController(onboardingController: self)
+                return OnboardingPeepController()
+//                return OnboardingSplashViewController(onboardingController: self)
             }
         case .setupProfile:
             return OnboardingProfileCreationViewController(onboardingController: self)

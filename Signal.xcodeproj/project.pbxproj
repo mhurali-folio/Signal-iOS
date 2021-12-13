@@ -36,6 +36,9 @@
 		32ECD08824BFBF8000EDDED0 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECD08724BFBF8000EDDED0 /* HelpViewController.swift */; };
 		32ECD08A24BFBF9500EDDED0 /* ContactSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ECD08924BFBF9500EDDED0 /* ContactSupportViewController.swift */; };
 		32FAB92A2727A57100FB76A6 /* PrimaryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FAB9292727A57100FB76A6 /* PrimaryImageView.swift */; };
+		3304FE0827675B6400C6D501 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304FE0727675B6400C6D501 /* CarouselCell.swift */; };
+		3304FE0A27675BDE00C6D501 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304FE0927675BDE00C6D501 /* CarouselView.swift */; };
+		332AF8AC276391F7000F92C9 /* OnboardingPeepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */; };
 		3402A9DA271D953B0084CBAE /* SUIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9D9271D953A0084CBAE /* SUIEnvironment.swift */; };
 		3402A9DC271D95C10084CBAE /* Dependencies+SignalUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9DB271D95C10084CBAE /* Dependencies+SignalUI.swift */; };
 		3402A9E3271D96570084CBAE /* UIView+OWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9E0271D96570084CBAE /* UIView+OWS.swift */; };
@@ -1172,6 +1175,9 @@
 		32ECD08724BFBF8000EDDED0 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		32ECD08924BFBF9500EDDED0 /* ContactSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportViewController.swift; sourceTree = "<group>"; };
 		32FAB9292727A57100FB76A6 /* PrimaryImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryImageView.swift; sourceTree = "<group>"; };
+		3304FE0727675B6400C6D501 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		3304FE0927675BDE00C6D501 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPeepController.swift; sourceTree = "<group>"; };
 		3384730F2761DFC800A9752C /* SignalTestable Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SignalTestable Release.entitlements"; sourceTree = "<group>"; };
 		338C08EE2758DD010079258D /* SignalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignalDebug.entitlements; sourceTree = "<group>"; };
 		3402A9D9271D953A0084CBAE /* SUIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIEnvironment.swift; sourceTree = "<group>"; };
@@ -2470,6 +2476,32 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		3304FE0627675B4700C6D501 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3304FE0727675B6400C6D501 /* CarouselCell.swift */,
+				3304FE0927675BDE00C6D501 /* CarouselView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		332AF8A927639045000F92C9 /* Peepline */ = {
+			isa = PBXGroup;
+			children = (
+				3304FE0627675B4700C6D501 /* CustomViews */,
+				332AF8AA2763904E000F92C9 /* OnboardingFlow */,
+			);
+			path = Peepline;
+			sourceTree = "<group>";
+		};
+		332AF8AA2763904E000F92C9 /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */,
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
 		3402A9D8271D953A0084CBAE /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -3371,6 +3403,7 @@
 		34B3F8331E8DF1700035BE1A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				332AF8A927639045000F92C9 /* Peepline */,
 				3490D57E25ADE49800F5F96C /* ActionSheetContentBuilder.swift */,
 				452B998F20A34B6B006F2F9E /* AddContactShareToExistingContactViewController.swift */,
 				340FC87A204DAC8C007AEB0F /* AppSettings */,
@@ -5294,8 +5327,8 @@
 				"${BUILT_PRODUCTS_DIR}/gRPC-Swift/GRPC.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework/WebRTC",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/SignalRingRTC/WebRTC/WebRTC.framework/WebRTC",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -5401,7 +5434,7 @@
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
 				"${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -5523,7 +5556,7 @@
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/Logging/Logging.framework",
 				"${BUILT_PRODUCTS_DIR}/MobileCoinMinimal/MobileCoinMinimal.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -5960,6 +5993,7 @@
 				34D99CE4217509C2000AFB39 /* AppEnvironment.swift in Sources */,
 				4C68FDAE2385F5A4002576B1 /* DebugUIDataStoreViewController.swift in Sources */,
 				4CD675C522E7CF22008010D2 /* ConversationViewController+OWS.swift in Sources */,
+				332AF8AC276391F7000F92C9 /* OnboardingPeepController.swift in Sources */,
 				347C3829252CE69400F3D941 /* CVComponentState+GroupLink.swift in Sources */,
 				3498AC922518E92B00B1F315 /* PaymentsSettingsViewController.swift in Sources */,
 				3497972025DAA86100E99FA4 /* SendPaymentCompletionActionSheet.swift in Sources */,
@@ -6098,6 +6132,7 @@
 				32AC5CF1255F875C00829BD8 /* GroupCallUpdateMessageHandler.swift in Sources */,
 				342FFE78271EF581000AC89F /* AVAudioSession+OWS.m in Sources */,
 				34BECE301F7ABCF800D7438D /* GifPickerLayout.swift in Sources */,
+				3304FE0827675B6400C6D501 /* CarouselCell.swift in Sources */,
 				347C3849252D004C00F3D941 /* CVComponentDateHeader.swift in Sources */,
 				34FB6A4F25D1C6AC00E599B1 /* PaymentsDetailViewController.swift in Sources */,
 				882BDAAE249050F000C14587 /* AddToGroupViewController.swift in Sources */,
@@ -6354,6 +6389,7 @@
 				34EEECF225E846ED00574F0D /* SendPaymentMemoViewController.swift in Sources */,
 				34E0127423FDA960002D0D13 /* DebugUIGroupsV2.swift in Sources */,
 				88ABB8B925349F6C00229EAA /* GroupCallVideoGridLayout.swift in Sources */,
+				3304FE0A27675BDE00C6D501 /* CarouselView.swift in Sources */,
 				88D23D2423CEC0C700B0E74B /* CallKitCallManager.swift in Sources */,
 				459311FC1D75C948008DD4F0 /* OWSDeviceTableViewCell.m in Sources */,
 				34EB0CEB26289D8800B62DC3 /* MessageTimerView.swift in Sources */,
