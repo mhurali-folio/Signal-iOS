@@ -8,6 +8,7 @@ class CarouselCell: UICollectionViewCell {
     // MARK: - SubViews
     private lazy var imageView = UIImageView()
     private lazy var textLabel = UILabel()
+    private lazy var titleLabel = UILabel()
     let screenSize: CGRect = UIScreen.main.bounds
     
     
@@ -32,31 +33,36 @@ private extension CarouselCell {
         backgroundColor = .clear
         
         addSubview(imageView)
-        imageView.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height * 0.2)
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-//        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-//        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        imageView.frame = CGRect(x: 0, y: 20, width: screenSize.width, height: screenSize.height * 0.5)
         imageView.contentMode = .scaleAspectFill
+        
+        addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 35).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = .center
+        titleLabel.font = .boldSystemFont(ofSize: 22)
+        titleLabel.textColor = .black
 
         addSubview(textLabel)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
+        textLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         textLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         textLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
-        textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .center
         textLabel.font = .systemFont(ofSize: 18)
-        textLabel.textColor = .white
+        textLabel.textColor = UIColor(rgbHex: 0x9A9A9A)
     }
 }
 
 // MARK: - Public
 extension CarouselCell {
-    public func configure(image: UIImage?, text: String) {
+    public func configure(image: UIImage?, text: String, title: String) {
         imageView.image = image
         textLabel.text = text
+        titleLabel.text = title
     }
 }

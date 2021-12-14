@@ -69,7 +69,7 @@ public extension UIColor {
     @objc(ows_accentBlueColor)
     class var ows_accentBlue: UIColor {
         // Ultramarine UI
-        return UIColor(rgbHex: 0x2C6BED)
+        return UIColor(rgbHex: 0x2D71B6) //0x2C6BED old signal color code
     }
 
     @objc(ows_accentBlueDarkColor)
