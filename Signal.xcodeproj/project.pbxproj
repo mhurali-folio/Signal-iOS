@@ -39,6 +39,7 @@
 		3304FE0827675B6400C6D501 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304FE0727675B6400C6D501 /* CarouselCell.swift */; };
 		3304FE0A27675BDE00C6D501 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3304FE0927675BDE00C6D501 /* CarouselView.swift */; };
 		332AF8AC276391F7000F92C9 /* OnboardingPeepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */; };
+		3387CC602768BE4300BF4796 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387CC5F2768BE4300BF4796 /* CreateAccountViewController.swift */; };
 		3402A9DA271D953B0084CBAE /* SUIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9D9271D953A0084CBAE /* SUIEnvironment.swift */; };
 		3402A9DC271D95C10084CBAE /* Dependencies+SignalUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9DB271D95C10084CBAE /* Dependencies+SignalUI.swift */; };
 		3402A9E3271D96570084CBAE /* UIView+OWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402A9E0271D96570084CBAE /* UIView+OWS.swift */; };
@@ -1179,6 +1180,7 @@
 		3304FE0927675BDE00C6D501 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPeepController.swift; sourceTree = "<group>"; };
 		3384730F2761DFC800A9752C /* SignalTestable Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SignalTestable Release.entitlements"; sourceTree = "<group>"; };
+		3387CC5F2768BE4300BF4796 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		338C08EE2758DD010079258D /* SignalDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SignalDebug.entitlements; sourceTree = "<group>"; };
 		3402A9D9271D953A0084CBAE /* SUIEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIEnvironment.swift; sourceTree = "<group>"; };
 		3402A9DB271D95C10084CBAE /* Dependencies+SignalUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dependencies+SignalUI.swift"; sourceTree = "<group>"; };
@@ -2498,6 +2500,7 @@
 			isa = PBXGroup;
 			children = (
 				332AF8AB276391F7000F92C9 /* OnboardingPeepController.swift */,
+				3387CC5F2768BE4300BF4796 /* CreateAccountViewController.swift */,
 			);
 			path = OnboardingFlow;
 			sourceTree = "<group>";
@@ -6065,6 +6068,7 @@
 				34955A73260A366600F3789A /* OnboardingDroppedYdbViewController.swift in Sources */,
 				34A4D8852677DF6B00A794E7 /* ConversationViewController+ConversationInputToolbarDelegate.swift in Sources */,
 				8835DDFD230CEE8900DC6B66 /* RecipientPickerDelegate.swift in Sources */,
+				3387CC602768BE4300BF4796 /* CreateAccountViewController.swift in Sources */,
 				8880179427430DDB00346E9A /* BadgeThanksSheet.swift in Sources */,
 				3465947E2434CCC100E5C510 /* NewGroupConfirmViewController.swift in Sources */,
 				3470C8742554926200F5847C /* QuotedMessageView.swift in Sources */,

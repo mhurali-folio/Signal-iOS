@@ -230,7 +230,7 @@ public class OnboardingController: NSObject {
             if SSKPreferences.didDropYdb() {
                 return OnboardingDroppedYdbViewController(onboardingController: self)
             } else {
-                return OnboardingPeepController()
+                return OnboardingPeepController(onboardingController: self)
 //                return OnboardingSplashViewController(onboardingController: self)
             }
         case .setupProfile:
@@ -252,6 +252,24 @@ public class OnboardingController: NSObject {
         Logger.info("")
 
         let view = OnboardingPermissionsViewController(onboardingController: self)
+        viewController.navigationController?.pushViewController(view, animated: true)
+    }
+    
+    public func onboardingPeeplineDidComplete(viewController: UIViewController) {
+        AssertIsOnMainThread()
+
+        Logger.info("")
+
+        let view = CreateAccountViewController(onboardingController: self)
+        viewController.navigationController?.pushViewController(view, animated: true)
+    }
+ 
+    public func onboardingCreateAccountDidComplete(viewController: UIViewController) {
+        AssertIsOnMainThread()
+
+        Logger.info("")
+
+        let view = OnboardingSplashViewController(onboardingController: self)
         viewController.navigationController?.pushViewController(view, animated: true)
     }
 

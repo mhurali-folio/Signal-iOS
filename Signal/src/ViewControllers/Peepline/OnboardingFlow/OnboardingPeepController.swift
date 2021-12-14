@@ -5,7 +5,7 @@
 import UIKit
 
 @objc
-public class OnboardingPeepController: UIViewController {
+public class OnboardingPeepController: OnboardingBaseViewController {
     // MARK: - Subviews
     private var carouselView: CarouselView?
     
@@ -72,7 +72,10 @@ private extension OnboardingPeepController {
             carouselView?.changePageToIndex(page: 2)
             return
         case 2:
-            print("final")
+//            let vc = CreateAccountViewController(onboardingController: self.onboardingController)
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+            onboardingController.onboardingPeeplineDidComplete(viewController: self)
             return
         default:
             return
