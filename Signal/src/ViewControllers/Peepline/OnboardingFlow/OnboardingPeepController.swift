@@ -20,6 +20,7 @@ public class OnboardingPeepController: OnboardingBaseViewController {
         view.backgroundColor = .white
 
         carouselView = CarouselView(pages: 3, delegate: self)
+        
         carouselData.append(.init(image: UIImage(named: "onboarding_boxes"), text: "Bring you and your Peeps into a safe & secure world away from big brothers", title: "Invite"))
         carouselData.append(.init(image: UIImage(named: "onboarding_network"), text: "It's your private circle or your own trusted peeps with those that matter most to you", title: "Connect"))
         carouselData.append(.init(image: UIImage(named: "onboarding_girl"), text: "Secure exchanges with end-to-end encryption to keep out prying eyes", title: "Share"))
@@ -72,9 +73,6 @@ private extension OnboardingPeepController {
             carouselView?.changePageToIndex(page: 2)
             return
         case 2:
-//            let vc = CreateAccountViewController(onboardingController: self.onboardingController)
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
             onboardingController.onboardingPeeplineDidComplete(viewController: self)
             return
         default:

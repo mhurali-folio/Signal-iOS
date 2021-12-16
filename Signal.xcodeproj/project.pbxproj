@@ -7951,7 +7951,7 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
@@ -8519,7 +8519,7 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;
@@ -9039,7 +9039,7 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
@@ -9110,7 +9110,7 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.3;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.peepline.signal;
 				PRODUCT_NAME = Signal;

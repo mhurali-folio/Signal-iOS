@@ -105,6 +105,7 @@ private extension CarouselView {
         carouselCollectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         carouselCollectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         carouselCollectionView.heightAnchor.constraint(equalToConstant: screenSize.height * 0.7).isActive = true
+        carouselCollectionView.backgroundColor = .white
     }
     
     func setupPageControl() {
@@ -169,7 +170,9 @@ extension CarouselView {
         carouselLayout.itemSize = .init(width: screenSize.width, height: screenSize.height * 0.7)
         carouselLayout.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         carouselLayout.minimumLineSpacing = 0
+       
         carouselCollectionView.collectionViewLayout = carouselLayout
+        carouselCollectionView.backgroundColor = .white
         
         carouselData = data
         carouselCollectionView.reloadData()
