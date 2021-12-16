@@ -28,6 +28,8 @@ public class CreateAccountViewController: OnboardingBaseViewController {
         alreadyAccountLabel.translatesAutoresizingMaskIntoConstraints = false
         alreadyAccountLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 45)
         alreadyAccountLabel.autoHCenterInSuperview()
+        alreadyAccountLabel.isUserInteractionEnabled = true
+        alreadyAccountLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(alreadyAccountPressed)))
         
         let continueButton = self.primaryButton(title: "Create a New Account")
         view.addSubview(continueButton)
@@ -45,8 +47,6 @@ public class CreateAccountViewController: OnboardingBaseViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.autoPinEdge(.bottom, to: .top, of: continueButton, withOffset: -60)
         titleLabel.autoHCenterInSuperview()
-        titleLabel.isUserInteractionEnabled = true
-        titleLabel.target(forAction: #selector(alreadyAccountPressed), withSender: nil)
     }
     
     func primaryButton(title: String ) -> OWSFlatButton {
