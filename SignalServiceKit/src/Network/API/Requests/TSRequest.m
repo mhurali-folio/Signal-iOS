@@ -74,6 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
                         method:(NSString *)method
                     parameters:(nullable NSDictionary<NSString *, id> *)parameters
 {
+    NSLog(@"peepline registerPrekeysRequestWithPrekeyArray %@",url.absoluteString);
     return [[TSRequest alloc] initWithURL:url method:method parameters:parameters];
 }
 

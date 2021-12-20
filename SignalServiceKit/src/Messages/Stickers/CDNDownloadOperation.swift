@@ -123,7 +123,7 @@ open class CDNDownloadOperation: OWSOperation {
         }
 
         let abortDownload = { (message: String) -> Void in
-            owsFailDebug(message)
+//            owsFailDebug(message)
             future.reject(StickerError.assertionFailure)
             task.cancel()
         }

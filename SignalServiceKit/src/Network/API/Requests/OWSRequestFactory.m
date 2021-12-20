@@ -575,6 +575,7 @@ NSString *const OWSRequestKey_AuthKey = @"AuthKey";
     OWSAssertDebug(signedPreKey);
 
     NSString *path = textSecureSignedKeysAPI;
+    NSLog(@"peepline registerSignedPrekeyRequestWithSignedPreKeyRecord %@",[NSURL URLWithString:path]);
     return [TSRequest requestWithUrl:[NSURL URLWithString:path]
                               method:@"PUT"
                           parameters:[self dictionaryFromSignedPreKey:signedPreKey]];
@@ -589,11 +590,13 @@ NSString *const OWSRequestKey_AuthKey = @"AuthKey";
     OWSAssertDebug(signedPreKey);
 
     NSString *path = textSecureKeysAPI;
+
     NSString *publicIdentityKey = [[identityKeyPublic prependKeyType] base64EncodedStringWithOptions:0];
     NSMutableArray *serializedPrekeyList = [NSMutableArray array];
     for (PreKeyRecord *preKey in prekeys) {
         [serializedPrekeyList addObject:[self dictionaryFromPreKey:preKey]];
     }
+    
     return [TSRequest requestWithUrl:[NSURL URLWithString:path]
                               method:@"PUT"
                           parameters:@{
