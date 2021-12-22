@@ -593,7 +593,7 @@ const NSUInteger kMinimumSearchLength = 1;
         for (SignalAccount *signalAccount in self.allSignalAccounts) {
             NSInteger section = [self.collation sectionForObject:signalAccount
                                          collationStringSelector:@selector(stringForCollation)];
-
+            OWSLogDebug(@"signal Account %@", signalAccount.recipientAddress);
             if (section < 0) {
                 OWSFailDebug(@"Unexpected collation for name:%@", signalAccount.stringForCollation);
                 continue;

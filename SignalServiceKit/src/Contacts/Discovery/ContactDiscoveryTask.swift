@@ -19,6 +19,8 @@ public class ContactDiscoveryTask: NSObject {
     /// Any non-e164 numbers will be filtered out
     @objc
     public init(phoneNumbers: Set<String>) {
+        Logger.info("Peeeeppp phoneNumbers init discovery task: \(phoneNumbers.count)")
+
         e164FetchSet = phoneNumbers.filter { $0.isValidE164() }
     }
 
@@ -50,6 +52,7 @@ public class ContactDiscoveryTask: NSObject {
     public func perform(at qos: DispatchQoS = .utility,
                         targetQueue: DispatchQueue? = nil,
                         database: SDSDatabaseStorage? = SDSDatabaseStorage.shared) -> Promise<Set<SignalRecipient>> {
+        Logger.info("Peeeeppp e164FetchSet perform discovery task: \(e164FetchSet.count)")
         guard e164FetchSet.count > 0 else {
             return Promise.value(Set())
         }
@@ -97,7 +100,8 @@ public class ContactDiscoveryTask: NSObject {
     // MARK: - Private
 
     private func createContactDiscoveryOperation() -> ContactDiscovering {
-        ModernContactDiscoveryOperation(e164sToLookup: e164FetchSet)
+        Logger.verbose("e164FetchSet : \(e164FetchSet.count)")
+        return ModernContactDiscoveryOperation(e164sToLookup: e164FetchSet)
     }
 
     private func storeResults(

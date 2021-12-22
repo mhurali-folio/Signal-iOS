@@ -100,6 +100,9 @@ class ModernContactDiscoveryOperation: ContactDiscovering {
 
             var registeredContacts: Set<CDSRegisteredContact> = Set()
 
+            Logger.verbose("peeeeeeppp contactCount \(contactCount)")
+            Logger.verbose("peeeeeeppp uuids.count \(uuids.count)")
+            
             for (index, e164PhoneNumber) in e164sToLookup.enumerated() {
                 let uuid = uuids[index]
                 guard uuid != unregisteredUuid else {

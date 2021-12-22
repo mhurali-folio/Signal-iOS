@@ -190,7 +190,8 @@ public extension GroupsV2Migration {
                     phoneNumbersWithoutUuids.insert(phoneNumber)
                 }
             }
-
+            Logger.verbose("peeep phoneNumbersWithoutUuids: \(phoneNumbersWithoutUuids.count)")
+            
             let migrationMode: GroupsV2MigrationMode = (GroupManager.canAutoMigrate
                                                             ? self.autoMigrationMode
                                                             : .possiblyAlreadyMigratedOnService)
@@ -402,7 +403,7 @@ fileprivate extension GroupsV2Migration {
                 return Promise.value(())
             }
 
-            Logger.info("Trying to fill in missing uuids: \(phoneNumbersWithoutUuids.count)")
+            Logger.info("Peeeeppp Trying to fill in missing uuids: \(phoneNumbersWithoutUuids.count)")
 
             let discoveryTask = ContactDiscoveryTask(phoneNumbers: Set(phoneNumbersWithoutUuids))
             return firstly {

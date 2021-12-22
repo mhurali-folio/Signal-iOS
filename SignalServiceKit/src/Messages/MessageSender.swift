@@ -712,6 +712,7 @@ extension MessageSender {
             return Promise.value(Array(validRecipients))
         }
 
+        Logger.info("peeep phoneNumbersToFetch \(phoneNumbersToFetch)")
         return firstly(on: .global()) { () -> Promise<Set<SignalRecipient>> in
             return ContactDiscoveryTask(phoneNumbers: Set(phoneNumbersToFetch)).perform()
         }.map(on: .sharedUtility) { (signalRecipients: Set<SignalRecipient>) -> [SignalServiceAddress] in

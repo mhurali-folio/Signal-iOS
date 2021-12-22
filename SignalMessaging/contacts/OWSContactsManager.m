@@ -434,6 +434,8 @@ NSString *const OWSContactsManagerKeyNextFullIntersectionDate = @"OWSContactsMan
                             failure:failureParameter];
         });
     };
+    
+    OWSLogDebug(@"peeeep phoneNumbers in owscontactmanagwer %lu",(unsigned long)phoneNumbers.count);
     OWSContactDiscoveryTask *discoveryTask = [[OWSContactDiscoveryTask alloc] initWithPhoneNumbers:phoneNumbers];
     [discoveryTask performAtQoS:QOS_CLASS_USER_INITIATED
                   callbackQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
